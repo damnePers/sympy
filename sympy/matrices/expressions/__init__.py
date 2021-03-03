@@ -20,6 +20,7 @@ from .kronecker import kronecker_product, KroneckerProduct, combine_kronecker
 from .permutation import PermutationMatrix, MatrixPermute
 from .sets import MatrixSet
 from .special import ZeroMatrix, Identity, OneMatrix
+from .conjugate import Conjugate
 
 __all__ = [
     'MatrixSlice',
@@ -45,6 +46,8 @@ __all__ = [
     'Determinant', 'det',
 
     'Transpose',
+
+    'Conjugate',
 
     'Adjoint',
 
