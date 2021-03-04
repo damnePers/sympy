@@ -176,9 +176,8 @@ class MatrixExpr(Expr):
         return self.rows == self.cols
 
     def _eval_conjugate(self):
-        from sympy.matrices.expressions.adjoint import Adjoint
-        from sympy.matrices.expressions.transpose import Transpose
-        return Adjoint(Transpose(self))
+        from sympy.matrices.expressions.conjugate import Conjugate
+        return Conjugate(self)
 
     def as_real_imag(self, deep=True, **hints):
         from sympy import I
