@@ -1,6 +1,6 @@
 from sympy.core import symbols, S
 from sympy.functions import adjoint, conjugate, transpose
-from sympy.matrices.expressions import MatrixSymbol, Adjoint, trace, Transpose
+from sympy.matrices.expressions import MatrixSymbol, Adjoint, trace, Transpose, Conjugate
 from sympy.matrices import eye, Matrix
 
 n, m, l, k, p = symbols('n m l k p', integer=True)
@@ -18,7 +18,7 @@ def test_adjoint():
     assert isinstance(Adjoint(Adjoint(A)), Adjoint)
 
     assert conjugate(Adjoint(A)) == Transpose(A)
-    assert transpose(Adjoint(A)) == Adjoint(Transpose(A))
+    assert transpose(Adjoint(A)) == Conjugate(A)
 
     assert Adjoint(eye(3)).doit() == eye(3)
 
