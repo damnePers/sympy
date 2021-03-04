@@ -14,6 +14,7 @@ def test_conjugate():
     assert Conjugate(A) == conjugate(A)
 
     assert Conjugate(A).shape == (m, n)
+    assert A.shape == conjugate(A).shape
     assert Conjugate(A*B).shape == (l, n)
     assert conjugate(Conjugate(A)) == A
     assert isinstance(Conjugate(Conjugate(A)), Conjugate)
