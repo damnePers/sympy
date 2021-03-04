@@ -13,7 +13,7 @@ def test_conjugate():
 
     assert Conjugate(A) == conjugate(A)
 
-    assert Conjugate(A).shape == (m, n)
+    assert Conjugate(A).shape == (n, m)
     assert A.shape == conjugate(A).shape
     assert Conjugate(A*B).shape == (l, n)
     assert conjugate(Conjugate(A)) == A
