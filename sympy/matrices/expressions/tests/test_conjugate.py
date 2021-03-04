@@ -12,3 +12,8 @@ def test_conjugate():
     Sq = MatrixSymbol('Sq', n, n)
 
     assert Conjugate(A) == conjugate(A)
+
+    assert Conjugate(A).shape == (m, n)
+    assert Conjugate(A*B).shape == (l, n)
+    assert conjugate(Conjugate(A)) == A
+    assert isinstance(Conjugate(Conjugate(A)), Conjugate)
